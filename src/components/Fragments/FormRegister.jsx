@@ -1,0 +1,36 @@
+import InputForm from '../Elements/Input';
+import Button from '../Elements/Button';
+
+const FormRegister = () => {
+    return (
+        <form action="">
+            <InputForm 
+                label="Fullname" 
+                type="text" 
+                placeholder="Insert your name" 
+                name="name" 
+            />
+            <InputForm 
+                label="Email" 
+                type="email" 
+                placeholder="example@email.com" 
+                name="email" 
+            />
+            <InputForm 
+                label="Password" 
+                type="password" 
+                placeholder="********" 
+                name="password" 
+            />
+            <InputForm 
+                label="Confirm Password" 
+                type="password" 
+                placeholder="********" 
+                name="ConfirmPassword" 
+            />
+        <Button classname="bg-blue-600 w-full">Register</Button>
+      </form>
+    );
+    };
+
+export default FormRegister;
