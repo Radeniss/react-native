@@ -1,3 +1,5 @@
+import Button from "../Elements/Button";
+
 const CardProduct = (props) => {
     const { children } = props;
     return (
@@ -18,15 +20,18 @@ const Header = () => {
     )
 }
 
-const Body = () => {
+const Body = (props) => {
+    const { children, title } = props;
     return (
         <div 
             className="px-5 pb-5">
             <a href="">
-                <h5 className="text-xl font-semibold tracking-tight text-white">New Car</h5>
+                <h5 className="text-xl font-semibold tracking-tight text-white pt-2">
+                {title}
+                </h5>
                 <p className="text-m text-white">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat minus autem rerum numquam accusamus optio hic qui minima. Nulla nobis excepturi quam earum velit error sit laudantium asperiores sapiente totam.
-                </p>
+                {children}
+                </p> 
             </a>
         </div>
     );
