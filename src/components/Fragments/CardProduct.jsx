@@ -3,17 +3,18 @@ import Button from "../Elements/Button";
 const CardProduct = (props) => {
     const { children } = props;
     return (
-        <div className="w-full max-w-sm bg-gray-600 border border-gray-700 rounded-lg shadow">
+        <div className="w-full max-w-sm bg-gray-600 border border-gray-700 rounded-lg shadow mx-2">
             {children}
         </div>
     )
 }
 
-const Header = () => {
+const Header = (props) => {
+    const {image} = props;
     return (
         <a href="">
             <img 
-                src="/images/car-1.png" 
+                src={image}
                 alt="product" 
                 className="p-8 rounded-t-lg "/>
         </a> 
@@ -26,7 +27,7 @@ const Body = (props) => {
         <div 
             className="px-5 pb-5">
             <a href="">
-                <h5 className="text-xl font-semibold tracking-tight text-white pt-2">
+                <h5 className="text-xl font-semibold tracking-tight text-white">
                 {title}
                 </h5>
                 <p className="text-m text-white">
@@ -37,10 +38,11 @@ const Body = (props) => {
     );
 }
 
-const Footer  = () => {
+const Footer  = (props) => {
+    const { price = "$20,000" } = props;
     return (
         <div className="flex items-center justify-beetwen px-5 pb-5 gap-x-20">
-            <span className="text-xl font-bold text-white">Rp 1.000.000</span>
+            <span className="text-xl font-bold text-white">{price}</span>
             <Button className="bg-blue-600">Add to Cart</Button>
         </div>
     )
