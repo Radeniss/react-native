@@ -7,7 +7,15 @@ const Products = [
         name: "New Car",
         image: "/images/car-1.png",
         price: "Rp 1.000.000",
-        body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat minus autem rerum numquam accusamus optio hic qui minima. Nulla nobis excepturi quam earum velit error sit laudantium asperiores sapiente totam.",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat minus autem rerum numquam accusamus optio hic qui minima. Nulla nobis excepturi quam earum velit error sit laudantium asperiores sapiente totam.",
+    },
+
+    {
+        id: 2,
+        name: "New Car",
+        image: "/images/car-1.png",
+        price: "Rp 1.000.000",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat minus autem rerum numquam accusamus optio hic qui minima. Nulla nobis excepturi quam earum velit error sit laudantium asperiores sapiente totam.",
     }
 ]
 
@@ -18,8 +26,8 @@ const ProductsPage = () => {
        {Products.map((product) => (
         <CardProduct key={product.id}>
             <CardProduct.Header image={product.image}  />
-            <CardProduct.Body name={product.title}>
-                 {product.body}
+            <CardProduct.Body name={product.title}> 
+                 {product.description}
             </CardProduct.Body>
             <CardProduct.Footer price={product.price} />
         </CardProduct>
