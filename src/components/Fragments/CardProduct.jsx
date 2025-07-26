@@ -38,12 +38,14 @@ const Body = (props) => {
     );
 }
 
-const Footer  = (props) => {
+const Footer = (props) => {
     const { price = "$20,000" } = props;
     return (
-        <div className="flex items-center justify-beetwen px-5 pb-5 gap-x-20">
-            <span className="text-xl font-bold text-white">{price}</span>
-            <Button className="bg-blue-600">Add to Cart</Button>
+        <div className="flex items-center justify-between px-5 pb-5">
+            <span className="text-xl font-bold text-white">
+                {price.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}
+            </span>
+            <Button className="bg-blue-600 mr-4">Add to Cart</Button>
         </div>
     )
 }
