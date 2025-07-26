@@ -8,9 +8,10 @@ const Button = (props) => {
 
   return (
     <button
+      // Tambahkan whitespace-nowrap di sini
       className={`h-10 px-6 font-semibold rounded-md whitespace-nowrap ${className} text-white`}
       type={type}
-      onClick={() => {onClick()}}
+      onClick={onClick}
     >
       {children}
     </button>

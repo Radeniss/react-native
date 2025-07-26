@@ -33,8 +33,7 @@ const email = localStorage.getItem("email");
 const ProductsPage = () => {
     const[cart, setCart] = useState([
         {
-            id: 1,
-            name: "New Car",
+            id: "1",
             qty: 1,
         }
     ]);
@@ -43,6 +42,16 @@ const ProductsPage = () => {
         localStorage.removeItem("email");
         localStorage.removeItem("password");
         window.location.href = "/login";}
+
+        const handleAddToCart = (id) => {
+            setCart([
+                ...cart,
+                {
+                    id,
+                    qty: 1,
+                }
+            ])
+        }
 
     return (
    <Fragment>
@@ -58,7 +67,11 @@ const ProductsPage = () => {
                     <CardProduct.Body name={product.name}>
                         {product.description}
                     </CardProduct.Body>
-                    <CardProduct.Footer price={product.price} />
+                    <CardProduct.Footer 
+                        price={product.price}
+                        id={product.id} 
+                        handleAddToCart = {handleAddToCart}
+                    />
                 </CardProduct>
            ))}
         </div>
@@ -67,12 +80,27 @@ const ProductsPage = () => {
                 cart
             </h1>
             <ul>
-                {cart.map((item) => (
-                    <li key={item.name}>
-                        {item.name}
-                    </li>
-                ))}
+                {cart.map((item) => 
+                    (
+                    <li key={item}>{item.id}</li>
+                    )
+                )}
             </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cart.map((item) => {
+                        const product = products.find((product) => product.id === item.id);
+                    })}
+                </tbody>
+            </table>
         </div>
     </div>
    </Fragment>
