@@ -21,7 +21,7 @@ class Counter extends React.Component {
                     onClick={() => this.setState ({count: this.state.count +1})}>
                     +
                 </button>
-                console.log("render");
+                {console.log("render")}
             </div>
         )
     }
