@@ -10,9 +10,15 @@ class Counter extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ count: 0 });
+        this.setState({ count: 1 });
         console.log("componentDidMount");
     }
+     componentDidUpdate (prevProps, prevState) {
+        console.log("componentDidUpdate");
+        if (this.state.count ===10) {
+            this.setState({ count: 0});
+        }  
+     }
     render () {
         return (
             <div  className="flex items-center">

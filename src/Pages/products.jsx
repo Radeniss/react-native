@@ -32,12 +32,7 @@ const Products = [
 const email = localStorage.getItem("email");
 
 const ProductsPage = () => {
-    const[cart, setCart] = useState([
-        {
-            id: 1,
-            qty: 1,
-        }
-    ]);
+    const[cart, setCart] = useState([]);
 
     const handleLogout =() => {
         localStorage.removeItem("email");
@@ -105,13 +100,19 @@ const ProductsPage = () => {
                             </tr>
                         )
                     })}
+                    <tr>
+                        <td colSpan={3}>
+                            <b>Total Price</b>
+                        </td>
+                        <td>{(1000000).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
-     <div className="mt-5 flex justify-center mb-5">
+     {/* <div className="mt-5 flex justify-center mb-5">
             <Counter></Counter>
-        </div>
+        </div> */}
    </Fragment>
 );
 
