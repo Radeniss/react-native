@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import Button from "../components/Elements/Button";
 import CardProduct from "../components/Fragments/CardProduct";
+import Counter from "../components/Fragments/Counter";
 
 const Products = [
     {
@@ -13,7 +14,7 @@ const Products = [
 
     {
         id: 2,
-        name: "New Car",
+        name: "Old Car",
         image: "/images/car-1.png",
         price: 1000000,
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat minus autem rerum numquam accusamus optio hic qui minima. Nulla nobis excepturi quam earum velit error sit laudantium asperiores sapiente totam.",
@@ -21,7 +22,7 @@ const Products = [
 
     {
         id: 3,
-        name: "New Car",
+        name: "Cash Car",
         image: "/images/car-1.png",
         price: 1000000,
         description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat minus autem rerum numquam accusamus optio hic qui minima. Nulla nobis excepturi quam earum velit error sit laudantium asperiores sapiente totam.",
@@ -85,7 +86,7 @@ const ProductsPage = () => {
             <h1 className="text-3xl font-bold text-blue-600 ml-5 mb-5">cart</h1>
             <table className="text-left table-auto border-separate border-spacing-x-5">
                 <thead>
-                    <tr>
+                    <tr className="text-center">
                         <th>Product</th>
                         <th>Price</th>
                         <th>Quantity</th>
@@ -96,7 +97,7 @@ const ProductsPage = () => {
                     {cart.map((item) => {
                         const product = Products.find((product) => product.id === item.id);
                         return (
-                            <tr key={item.id}>
+                            <tr key={item.id} className="text-center">
                                 <td>{product.name}</td>
                                 <td>{product.price.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</td>
                                 <td>{item.qty}</td>
@@ -108,6 +109,9 @@ const ProductsPage = () => {
             </table>
         </div>
     </div>
+     <div className="mt-5 flex justify-center mb-5">
+            <Counter></Counter>
+        </div>
    </Fragment>
 );
 
